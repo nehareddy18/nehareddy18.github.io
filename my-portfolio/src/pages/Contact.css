@@ -103,6 +103,7 @@
   }
 }
 
+
 @media (max-width: 480px) {
   .sticky-title {
     top: 250px; /* Maintain 150px below header */
