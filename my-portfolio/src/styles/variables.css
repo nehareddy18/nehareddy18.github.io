@@ -1,0 +1,13 @@
+:root {
+    --color-bg: #f9fafb;
+    --color-text-primary: #ccd6f6;
+    --color-text-secondary: #8892b0;
+    --color-accent: #64ffda;
+    --max-width: 1000px;
+  
+    --font-family-base: font-family: 'Calistoga', sans-serif;;
+    --font-size-heading: 3rem;
+    --font-size-subheading: 2rem;
+    --font-size-body: 1rem;
+  }
+  

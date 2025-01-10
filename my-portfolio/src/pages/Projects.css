@@ -1,0 +1,154 @@
+
+/* CSS Variables for Consistency */
+:root {
+  --spacing: 1rem;
+  --font-small: clamp(1rem, 2vw, 1.5rem);
+  --font-medium: clamp(1.2rem, 2.5vw, 2rem);
+  --font-large: clamp(2rem, 4vw, 4rem);
+  --font-extra-large: clamp(3rem, 6vw, 8rem);
+  --container-padding: 2rem;
+  --max-width: 1200px;
+  --font-family: 'Calistoga', sans-serif;
+}
+
+
+body {
+  
+  font-family: Arial, sans-serif;
+  color: #333;
+  
+}
+
+.projects-section {
+  margin-top: 10%;
+  padding: 80px 20px;
+  font-family: var(--font-family);
+}
+
+.projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Sticky Title */
+/* Default Sticky Title (for large screens) */
+.sticky-title {
+  position: fixed; /* Ensures the title stays fixed on the side */
+  top: 200px;
+  left: 10%;
+  font-size: var(--font-large); /* Responsive font size */
+  font-weight: bold;
+  color: #027184;
+  opacity: 0.5;
+  writing-mode: vertical-rl; /* Vertical text */
+  text-orientation: mixed;
+  transform: translateX(-50%);
+  user-select: none;
+  z-index: 1000;
+}
+
+/* Responsive Design: Move Title to Top */
+@media (max-width: 1068px) {
+  .sticky-title {
+    opacity: 0; /* Slightly increase opacity for visibility */
+  }
+}
+
+@media (max-width: 480px) {
+  .sticky-title {
+    opacity: 0.9; /* Make it more visible */
+  }
+}
+
+
+/* Project Row */
+.project-row {
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+  margin-bottom: 100px;
+  gap: 40px;
+  border: #027184;
+  max-width: 80%;
+  margin-left: 10%;
+}
+
+.project-row:nth-child(even) .project-content {
+  order: 2;
+}
+
+.project-row:nth-child(even) .project-image-container {
+  order: 1;
+}
+
+/* Project Content */
+.project-content {
+  flex: 1;
+  max-width: 50%;
+}
+
+.project-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: black;
+}
+
+.project-line {
+  width: 50px;
+  height: 2px;
+  background-color: #000;
+  margin: 20px 0;
+}
+
+.project-description {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.project-link {
+  font-size: 16px;
+  color: #007BFF;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.project-link .arrow {
+  margin-left: 5px;
+  font-size: 18px;
+  transition: margin-left 0.2s ease;
+}
+
+.project-link:hover .arrow {
+  margin-left: 10px;
+}
+
+/* Project Image */
+.project-image-container {
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-image {
+  max-width: 300px;
+  border-radius: 10px;
+
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .project-row {
+    flex-direction: column;
+  }
+
+  .project-content,
+  .project-image-container {
+    max-width: 100%;
+  }
+}

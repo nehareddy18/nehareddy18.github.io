@@ -1,0 +1,29 @@
+.header {
+  background: #282c34;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.header nav a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: #61dafb;
+}
+
+.header nav a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.footer {
+  background: #20232a;
+  color: #61dafb;
+  text-align: center;
+  padding: 20px;
+}
+
+main {
+  padding: 20px;
+}

@@ -1,0 +1,7 @@
+@import '../styles/variables.css';
+.layout-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 100px 20px; /* top padding to position content away from top nav */
+  }
+  

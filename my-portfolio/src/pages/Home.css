@@ -1,0 +1,316 @@
+/* CSS Variables for Consistency */
+:root {
+  --spacing: 1rem;
+  --font-small: clamp(1rem, 2vw, 1.5rem);
+  --font-medium: clamp(1.2rem, 2.5vw, 2rem);
+  --font-large: clamp(2rem, 4vw, 4rem);
+  --font-extra-large: clamp(3rem, 6vw, 8rem);
+  --container-padding: 2rem;
+  --max-width: 1200px;
+  --font-family: 'Calistoga', sans-serif;
+}
+
+/* General Reset */
+body {
+  font-family: 'Calistoga', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Full Page Container */
+.home-page {
+  overflow-y: auto;
+  height: 100vh;
+}
+
+/* Hero Section */
+.hero-section {
+  font-family: var(--font-family);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  padding: 0 var(--container-padding);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.hero-greeting {
+  font-size: var(--font-medium);
+  color: #495670;
+  margin-bottom: 0.5rem;
+}
+
+.hero-title {
+  font-size: var(--font-extra-large);
+  font-family: var(--font-family);
+  font-weight: bold;
+  margin: 0;
+  background: linear-gradient(90deg, #0193A5,#027184, #004A59, #F16744,#d64e2c, #C73618);
+  background-size: 300%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-flow 3s infinite linear alternate;
+}
+
+.hero-subtitle {
+  font-size: var(--font-medium);
+  font-weight: bold;
+  color: #495670;
+  margin-bottom: 1rem;
+}
+
+.hero-description {
+  max-width: 100%;
+  font-size: var(--font-small);
+  color: #8892b0;
+  line-height: 1.6;
+}
+
+@keyframes gradient-flow {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+
+/* Continuation Section */
+.continuation-section {
+  font-family: var(--font-family);
+  display: flex;
+  color: #000000;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  padding: var(--container-padding);
+  background-color: #52aabb;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 5%;
+}
+
+.continuation-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing);
+}
+
+.continuation-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+}
+
+.continuation-text p{
+  max-width: 600px;
+  font-size: var(--font-small);
+  color: #fffcfc;
+  line-height: 1.6;
+  text-align: center;
+  margin-top: 20%;
+}
+
+/* Skills Section */
+.skills-section {
+  padding: var(--container-padding);
+  font-family: var(--font-family);
+  align-content: center;
+    overflow: hidden;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing);
+}
+
+.skills-track {
+  display: flex;
+  gap: var(--spacing);
+  animation: scroll 20s linear infinite;
+}
+
+.skills-track img {
+  width: 150px;
+  object-fit: contain;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Design Journey Section */
+.design-journey-section {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-family);
+  align-items: center;
+  background: #0193a5;
+  color: #ffffff;
+  padding: var(--container-padding);
+  text-align: center;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.journey-title {
+  font-size: var(--font-large);
+  margin-bottom: var(--spacing);
+  color: #ffffff;
+}
+
+.journey-description {
+  font-size: var(--font-small);
+  line-height: 1.6;
+  color: #ffffff;
+  margin-bottom: var(--spacing);
+}
+
+.journey-button {
+  background-color: #ffffff;
+  color: #1e6077;
+  border: none;
+  border-radius: 25px;
+  padding: 0.75rem 1.5rem;
+  margin-top: var(--spacing);
+  font-size: var(--font-small);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.journey-button:hover {
+  background-color: #3f869d;
+  color: #ffffff;
+}
+
+.journey-image img {
+  width: 100%;
+  max-width: 300px;
+  animation: float 4s ease-in-out infinite;
+  margin-top: var(--spacing);
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Case Studies Section */
+.case-studies-section {
+  padding: var(--container-padding);
+  background-color:  #336d79;
+  font-family: var(--font-family);
+  color: rgb(0, 0, 0);
+  text-align: center;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.case-studies-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing);
+}
+
+.case-studies-title {
+  font-size: var(--font-large);
+  color: #ffffff;
+}
+.case-studies-description{
+  font-size: var(--font-small);
+  line-height: 1.6;
+  color: #ffffff;
+  margin-bottom: var(--spacing);
+}
+.case-study-card {
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: var(--spacing);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.case-study-card h3{
+
+  color: #000000;
+
+}
+
+.case-study-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.case-button {
+  background-color: #ffffff;
+  color: #1e6077;
+  border: none;
+  border-radius: 25px;
+  padding: 0.75rem 1.5rem;
+  margin-top: var(--spacing);
+  font-size: var(--font-small);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Media Queries */
+@media (min-width: 1440px) {
+  .hero-title {
+    font-size: clamp(3rem, 5vw, 10rem);
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-section {
+    align-items: center;
+    text-align: center;
+  }
+
+  .design-journey-section {
+    flex-direction: column;
+  }
+
+  .skills-section {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: var(--font-large);
+  }
+
+  .case-study-card {
+    width: 100%;
+  }
+}

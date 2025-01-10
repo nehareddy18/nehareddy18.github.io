@@ -1,0 +1,108 @@
+@import '../styles/variables.css';
+
+/* Navbar Container */
+.navbar {
+    position: fixed;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+    background: var(--color-bg);
+    z-index: 1000;
+  }
+
+  .navbar.scrolled {
+    position: fixed;
+    padding-top: 20px;
+    width: 100%;
+    background: transparent;
+    z-index: 1000;
+    background: var(--color-bg); /* White background when scrolled */
+    transition: background 0.01s ease-in; /* Smooth transition */
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .header-brand {
+    font-family: 'Calistoga', sans-serif; /* Apply Calistoga font */
+    font-size: 24px; /* Adjust font size */
+    line-height: 1.1em; /* Set line height */
+    text-transform: capitalize; /* Capitalize text */
+    color: #027184; /* Dark text color */
+    text-align: center; /* Center alignment */
+    margin: 0; /* Remove default margins */
+  }
+  
+  
+  .navbar-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .navbar-links a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 1000;
+    font-family: 'Calistoga', sans-serif;
+    font-size: 1.2rem;
+  }
+
+  
+  
+  .dropbtn {
+    background-color: #027184;
+    font-family: 'Calistoga', sans-serif;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+
+  .dropbtn:hover {
+    background-color: #027184;
+    font-family: 'Calistoga', sans-serif;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+
+
+  
+  .dropdown {
+    position: relative;
+    font-family: 'Calistoga', sans-serif;
+    display: inline-block;
+    background-color: transparent;
+  }
+  
+  .dropdown-content {
+    display: none;
+    font-family: var(--font-family-base);
+    position: absolute;
+    background-color: #f9fafb;
+    min-width: 105px;
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    background: transparent transparent transparent;
+    font-family: var(--font-family-base);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content:hover {
+    color:#027184;
+    cursor:crosshair;
+
+  }
+
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  
