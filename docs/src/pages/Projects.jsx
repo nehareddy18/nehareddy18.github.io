@@ -3,6 +3,9 @@ import "./Projects.css";
 import comingUp from "../assets/comingUp.png";
 import bb from "../assets/b&b.png";
 import dollar from "../assets/dollartree.png";
+import fway from "../assets/fway.png";
+import PageTransition from "../components/PageTransition";
+
 
 export default function Research() {
   const projects = [
@@ -12,6 +15,13 @@ export default function Research() {
         "Visualizing an app for Dollar Tree, no more struggling on website ;)",
       link: "https://www.behance.net/gallery/216494629/Dollar-Tree-App-Design",
       image: dollar , // Replace with the actual image path
+    },
+    {
+      title: "My work @ Founderway",
+      description:
+        "I was a UI and UX specialist at Founderway, working to enchance user-facing products",
+      link: "https://www.behance.net/gallery/216495793/Internship-Work",
+      image: fway , // Replace with the actual image path
     },
     {
       title: "Bath & Bodyworks redesigned",
@@ -30,6 +40,7 @@ export default function Research() {
   ];
 
   return (
+    <PageTransition>
     <div className="projects-section">
       <div className="projects-container">
         <div className="sticky-title">Projects</div>
@@ -54,5 +65,6 @@ export default function Research() {
         ))}
       </div>
     </div>
+    </PageTransition>
   );
 }

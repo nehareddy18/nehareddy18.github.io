@@ -5,6 +5,8 @@ import fway from "../assets/fway.png";
 import zara from "../assets/zara.png";
 import comingUp from "../assets/comingUp.png";
 import bath from "../assets/bath.png";
+import PageTransition from "../components/PageTransition";
+
 
 export default function Research() {
   const projects = [
@@ -33,6 +35,7 @@ export default function Research() {
   ];
 
   return (
+    <PageTransition>
     <div className="projects-section">
       <div className="projects-container">
         <div className="sticky-title">Research</div>
@@ -57,5 +60,6 @@ export default function Research() {
         ))}
       </div>
     </div>
+    </PageTransition>
   );
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaLinkedin, FaFile } from 'react-icons/fa';
+import { FaLinkedin, FaFilePdf ,FaBehanceSquare } from 'react-icons/fa';
 import styled from 'styled-components';
 
 const StyledSideElement = styled.div`
@@ -29,7 +29,7 @@ const StyledSideElement = styled.div`
     transition: color 0.3s;
 
     &:hover {
-      color: red;
+      color: #FF5757;
       transition: color 0.3s;
     }
   }
@@ -47,12 +47,16 @@ const StyledSideElement = styled.div`
 const Side = ({ orientation }) => (
   <StyledSideElement orientation={orientation}>
 
-    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+    <a href="https://linkedin.com/in/nehareddy-d" target="_blank" rel="noopener noreferrer">
       <FaLinkedin size="48" />
     </a>
-    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-      <FaFile size="48" />
+    <a href="https://www.behance.net/nehareddy19" target="_blank" rel="noopener noreferrer">
+      <FaBehanceSquare size="48" />
     </a>
+    <a href="https://nehasresume9852173.tiiny.site/" target="_blank" rel="noopener noreferrer">
+      <FaFilePdf size="48" />
+    </a>
+
   </StyledSideElement>
 );
 

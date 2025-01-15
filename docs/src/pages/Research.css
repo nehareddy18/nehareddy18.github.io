@@ -1,4 +1,3 @@
-
 /* CSS Variables for Consistency */
 :root {
     --spacing: 1rem;
@@ -48,29 +47,12 @@ body {
     z-index: 1000;
   }
   
-  /* Responsive Design: Move Title to Top */
-  @media (max-width: 1068px) {
-    .sticky-title {
-      position: absolute; /* Change to absolute for top placement */
-      top: 250px; /* Place it 150px below the top of the page */
-      left: 50%; /* Center horizontally */
-      transform: translateX(-50%); /* Center the title */
-      writing-mode: horizontal-tb; /* Switch to horizontal text for better readability */
-      text-orientation: initial;
-      font-size: var(--font-medium); /* Adjust font size for smaller screens */
-      opacity: 0.8; /* Slightly increase opacity for visibility */
-    }
+/* Responsive Design: Move Title to Top */
+@media (max-width: 1070px) {
+  .sticky-title {
+    display: none;
   }
-  
-  @media (max-width: 480px) {
-    .sticky-title {
-      top: 250px; /* Maintain 150px below header */
-      font-size: var(--font-small); /* Further reduce font size for smaller devices */
-      opacity: 0.9; /* Make it more visible */
-    }
-  }
-  
-  
+} 
   /* Project Row */
   .project-row {
     display: flex;
@@ -156,6 +138,34 @@ body {
     .project-content,
     .project-image-container {
       max-width: 100%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .projects-section {
+      margin-top: 80px;
+      padding: var(--mobile-padding);
+    }
+
+    .project-row {
+      flex-direction: column;
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .project-content,
+    .project-image-container {
+      max-width: 100%;
+      text-align: center;
+    }
+
+    .project-line {
+      margin: 1rem auto;
+    }
+
+    .project-image {
+      max-width: 100%;
+      height: auto;
     }
   }
   

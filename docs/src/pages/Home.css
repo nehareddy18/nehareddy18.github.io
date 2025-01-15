@@ -8,6 +8,10 @@
   --container-padding: 2rem;
   --max-width: 1200px;
   --font-family: 'Calistoga', sans-serif;
+  --title: #FF5757;
+  --mobile-padding: 1rem;
+  --tablet-padding: 2rem;
+  --space-xl: 3rem;
 }
 
 /* General Reset */
@@ -54,11 +58,16 @@ img {
   font-family: var(--font-family);
   font-weight: bold;
   margin: 0;
-  background: linear-gradient(90deg, #0193A5,#027184, #004A59, #F16744,#d64e2c, #C73618);
+  background: linear-gradient(90deg, 
+    #0193A5,    /* Logo teal */
+    #027184,    /* Slightly darker teal */
+    #FF5757,    /* Logo red */
+    #E84949     /* Slightly darker red */
+  );
   background-size: 300%;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: gradient-flow 3s infinite linear alternate;
+  animation: gradient-flow 2.5s infinite linear alternate;
 }
 
 .hero-subtitle {
@@ -94,7 +103,7 @@ img {
   justify-content: center;
   height: auto;
   padding: var(--container-padding);
-  background-color: #52aabb;
+  background-color: #4fa5b6;
   margin-left: 10%;
   margin-right: 10%;
   margin-bottom: 5%;
@@ -126,59 +135,71 @@ img {
 .skills-section {
   padding: var(--container-padding);
   font-family: var(--font-family);
-  align-content: center;
-    overflow: hidden;
-    margin-left: 10%;
-    margin-right: 10%;
+  overflow: hidden;
+  margin: 5% 10%;
 }
 
 .skills-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: var(--spacing);
+  width: 100%;
+  overflow: hidden;
 }
 
 .skills-track {
   display: flex;
-  gap: var(--spacing);
+  gap: 4rem;
   animation: scroll 20s linear infinite;
 }
 
 .skills-track img {
   width: 150px;
+  height: 80px;
   object-fit: contain;
 }
 
 @keyframes scroll {
-  from {
+  0% {
     transform: translateX(0);
   }
-  to {
-    transform: translateX(-50%);
+  100% {
+    transform: translateX(calc(-100% - 2rem));
   }
 }
 
 /* Design Journey Section */
 .design-journey-section {
   display: flex;
-  flex-direction: column;
-  font-family: var(--font-family);
+  flex-direction: row; /* Change direction to row */
+  justify-content: space-between; /* Space between text and image */
   align-items: center;
+  font-family: var(--font-family);
   background: #0193a5;
   color: #ffffff;
   padding: var(--container-padding);
-  text-align: center;
   margin-left: 10%;
   margin-right: 10%;
   margin-top: 5%;
   margin-bottom: 5%;
 }
 
+.journey-content {
+  flex: 1; /* Allow text to take up equal space */
+  padding-right: 2rem; /* Add space between text and image */
+}
+
+.journey-image {
+  flex: 1; /* Allow image to take up equal space */
+  text-align: center; /* Center the image */
+}
+
+
 .journey-title {
   font-size: var(--font-large);
   margin-bottom: var(--spacing);
-  color: #ffffff;
+  color: var(--title);
+  opacity: 0.85;
+  text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+
 }
 
 .journey-description {
@@ -186,6 +207,7 @@ img {
   line-height: 1.6;
   color: #ffffff;
   margin-bottom: var(--spacing);
+
 }
 
 .journey-button {
@@ -202,15 +224,8 @@ img {
 }
 
 .journey-button:hover {
-  background-color: #3f869d;
+  background-color: var(--title);
   color: #ffffff;
-}
-
-.journey-image img {
-  width: 100%;
-  max-width: 300px;
-  animation: float 4s ease-in-out infinite;
-  margin-top: var(--spacing);
 }
 
 @keyframes float {
@@ -225,54 +240,49 @@ img {
 
 /* Case Studies Section */
 .case-studies-section {
-  padding: var(--container-padding);
-  background-color:  #336d79;
+  display: flex;
+  flex-direction: row; /* Arrange text and image side by side */
+  justify-content: space-between; /* Space between text and image */
+  align-items: center; /* Align content vertically */
   font-family: var(--font-family);
-  color: rgb(0, 0, 0);
-  text-align: center;
+  background: #1f899e; /* Use a distinct background */
+  color: #ffffff;
+  padding: var(--container-padding);
   margin-left: 10%;
   margin-right: 10%;
   margin-top: 5%;
   margin-bottom: 5%;
 }
 
+.case-studies-header {
+  flex: 1; /* Allow text to take up equal space */
+  padding-right: 2rem; /* Add space between text and image */
+}
+
 .case-studies-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--spacing);
+  flex: 1; /* Allow image section to take up equal space */
+  text-align: center; /* Center the image */
 }
 
 .case-studies-title {
   font-size: var(--font-large);
-  color: #ffffff;
+  margin-bottom: var(--spacing);
+  color: var(--title);
+  opacity: 0.85;
+  text-shadow: -0.5px -0.5px 0 rgb(255, 255, 255), 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+  line-height: 110%;
 }
-.case-studies-description{
+
+.case-studies-description {
   font-size: var(--font-small);
   line-height: 1.6;
   color: #ffffff;
   margin-bottom: var(--spacing);
 }
-.case-study-card {
-  background: #f9f9f9;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: var(--spacing);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.case-study-card h3{
 
-  color: #000000;
-
-}
-
-.case-study-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.case-button {
+.case-studies-button {
   background-color: #ffffff;
-  color: #1e6077;
+  color: #016d7c;
   border: none;
   border-radius: 25px;
   padding: 0.75rem 1.5rem;
@@ -281,6 +291,17 @@ img {
   font-weight: bold;
   cursor: pointer;
   transition: background 0.3s ease, color 0.3s ease;
+}
+
+.case-studies-button:hover {
+  background-color: var(--title);
+  color: #ffffff;
+}
+
+.case-image {
+  flex: 1; /* Allow image to take up equal space */
+  text-align: center; /* Center the image */
+
 }
 
 /* Media Queries */
@@ -312,5 +333,131 @@ img {
 
   .case-study-card {
     width: 100%;
+  }
+}
+
+/* Base responsive styles */
+:root {
+  --mobile-padding: 1rem;
+  --tablet-padding: 2rem;
+}
+
+/* Hero Section Mobile Optimization */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: var(--mobile-padding);
+    text-align: center;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .hero-title {
+    font-size: var(--font-large);
+    line-height: 1.2;
+  }
+
+  .continuation-section,
+  .design-journey-section,
+  .case-studies-section {
+    margin-left: var(--mobile-padding);
+    margin-right: var(--mobile-padding);
+    padding: var(--mobile-padding);
+  }
+
+  .design-journey-section,
+  .case-studies-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .journey-content,
+  .case-studies-header {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .journey-image img,
+  .case-image img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .skills-section {
+    margin-left: var(--mobile-padding);
+    margin-right: var(--mobile-padding);
+  }
+
+  .skills-track img {
+    width: 100px;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: var(--font-medium);
+  }
+
+  .hero-description {
+    font-size: calc(var(--font-small) * 0.9);
+  }
+}
+
+.section {
+  padding: var(--space-xl) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(1, 147, 165, 0.05), rgba(255, 87, 87, 0.05));
+  transform: skewY(-6deg);
+  z-index: -1;
+}
+
+/* Design Journey Section */
+@media (max-width: 768px) {
+  .journey-description,
+  .journey-image,
+  .case-studies-description,
+  .case-image {
+    display: none;  /* Hide these elements on mobile */
+  }
+
+  .design-journey-section,
+  .case-studies-section {
+    padding: 2rem var(--mobile-padding);
+    margin: var(--mobile-padding);
+    text-align: center;
+  }
+
+  .journey-content,
+  .case-studies-header {
+    padding-right: 0;
+    width: 100%;
+  }
+
+  .journey-title,
+  .case-studies-title {
+    margin-bottom: 1rem;  /* Reduce spacing since description is hidden */
+  }
+
+  .journey-button,
+  .case-studies-button {
+    margin-top: 1rem;  /* Adjust button spacing */
+  }
+}
+
+/* Ensure buttons are prominent on mobile */
+@media (max-width: 480px) {
+  .journey-button,
+  .case-studies-button {
+    width: 100%;  /* Full width buttons on smaller screens */
+    padding: 1rem;
+    font-size: 1rem;
   }
 }

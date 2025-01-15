@@ -1,113 +1,142 @@
-
-
 .contact-page {
   min-height: 100vh;
+  padding: 0 20px;
+  font-family: var(--font-family);
   display: flex;
-  justify-content: center;
   align-items: center;
-  font-family: "Calistoga", sans-serif;
-  box-sizing: border-box;
-  padding: 2rem;
-  background-size: CONTAIN; /* Scale the image to fit */
-  background-repeat: no-repeat; /* Prevent tiling */
-  background-position:top  /* Center the image */
-  
+  justify-content: center;
 }
 
 .contact-container {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: 2rem;
-  max-width: 800px;
-  width: 80%;
-  margin: 0 auto;
+  padding: 2rem 0;
 }
 
 .contact-message {
-  background-color: #2b6e7c;
-  padding: 1rem 2rem;
-  border-radius: 20px 20px 0 20px;
-  font-size: 1rem;
-  font-weight: bold;
-  width: fit-content;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  align-self: flex-end;
-  text-align: left;
-  margin-right: 15%;
+  background: rgba(2, 113, 132, 0.1);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-left: auto;
+  max-width: 80%;
 }
 
-.contact-message p{
-    color: #fff;
-  }
+.contact-message p {
+  margin: 0;
+  color: #027184;
+  font-size: 1.2rem;
+}
 
 .contact-reply {
   display: flex;
-  align-items: center;
-  width: 100%;
-  font-size: 1rem;
+  gap: 1rem;
+  align-items: flex-start;
 }
 
 .profile-pic {
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  object-fit: contain;
-  flex-shrink: 0;
-  margin-top: 10%;
-  margin-left: 15%;
-  margin-bottom: 10%;
+  object-fit: cover;
 }
 
 .reply-box {
-  border: 2px dotted #2b6e7c;
-  border-radius: 20px 20px 20px 0;
-  padding: 1rem;
-  background-color: #fff;
+  background: #027184;
+  padding: 1.5rem;
+  border-radius: 12px;
+  color: white;
+  flex: 1;
+}
+
+.reply-box p {
+  margin: 0;
+  color: white;
+  font-size: 1.2rem;
   line-height: 1.6;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 50%;
-  text-align: left;
 }
 
-.reply-box p{
-  color: #000;
+.reply-box strong {
+  display: block;
+  margin-bottom: 0.5rem;
 }
 
-.sticky-title {
-  position: fixed; /* Ensures the title stays fixed on the side */
-  top: 200px;
-  left: 10%;
-  font-size: var(--font-large); /* Responsive font size */
-  font-weight: bold;
-  color: #027184;
-  opacity: 0.5;
-  writing-mode: vertical-rl; /* Vertical text */
-  text-orientation: mixed;
-  transform: translateX(-50%);
-  user-select: none;
-  z-index: 1000;
-}
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+  .contact-page {
+    padding: 0 16px;
+    min-height: calc(100vh - 60px);
+  }
 
-/* Responsive Design: Move Title to Top */
-@media (max-width: 1068px) {
+  .contact-container {
+    padding: 1rem 0;
+    gap: 1.5rem;
+  }
+
+  .contact-message {
+    max-width: 90%;
+    padding: 1rem;
+  }
+
+  .contact-message p {
+    font-size: 1rem;
+  }
+
+  .contact-reply {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-pic {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+  }
+
+  .reply-box {
+    width: 100%;
+    padding: 1.2rem;
+  }
+
+  .reply-box p {
+    font-size: 1rem;
+  }
+
+  .reply-box br {
+    display: none; /* Remove line breaks on mobile */
+  }
+
+  /* Adjust sticky title for mobile */
   .sticky-title {
-    position: absolute; /* Change to absolute for top placement */
-    top: 250px; /* Place it 150px below the top of the page */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Center the title */
-    writing-mode: horizontal-tb; /* Switch to horizontal text for better readability */
-    text-orientation: initial;
-    font-size: var(--font-medium); /* Adjust font size for smaller screens */
-    opacity: 0.8; /* Slightly increase opacity for visibility */
+    position: static;
+    text-align: center;
+    writing-mode: horizontal-tb;
+    transform: none;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    opacity: 1;
   }
 }
 
-
+/* Small mobile devices */
 @media (max-width: 480px) {
+  .contact-page {
+    padding: 60px 12px 30px;
+  }
+
+  .contact-message {
+    max-width: 100%;
+  }
+
+  .reply-box p {
+    font-size: 0.9rem;
+  }
+
   .sticky-title {
-    top: 250px; /* Maintain 150px below header */
-    font-size: var(--font-small); /* Further reduce font size for smaller devices */
-    opacity: 0.9; /* Make it more visible */
+    font-size: 1.8rem;
   }
 }

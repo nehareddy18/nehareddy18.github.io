@@ -1,9 +1,9 @@
 import React from 'react';
 import './Home.css';
 import Side from './Side'; // Adjust the import path as needed
-import heroGif from '../assets/hero.gif';
+
 import profileImage from '../assets/profileImage.png';
-import arrowImage from '../assets/arrowImage.png';
+
 import figmaLogo from '../assets/figmaLogo.png';
 import htmlLogo from '../assets/htmlLogo.png';
 import cssLogo from '../assets/cssLogo.png';
@@ -11,12 +11,14 @@ import muralLogo from '../assets/muralLogo.png';
 import balsamiqLogo from '../assets/balsamiqLogo.png';
 import moqupsLogo from '../assets/moqupsLogo.png';
 import journeyImage from '../assets/journeyImage.png';
-import comingUp from '../assets/comingUp.png';
-import lyftCaseStudy from '../assets/lyftCaseStudy.png';
-import newProduct from '../assets/newProduct.png';
+import { Link } from 'react-router-dom';
+import caseImage from '../assets/cass.png';
+import PageTransition from "../components/PageTransition";
+
 
 export default function Home() {
   return (
+    <PageTransition>
     <div className="home-page">
       {/* Side Components */}
       <Side isHome={true} orientation="left">
@@ -87,7 +89,9 @@ export default function Home() {
             A progression of design thinking and execution. From foundational principles to innovative solutions.
             Cultivating a design philosophy through practical application. Witness the evolution of my design expertise.
           </p>
-          <button className="journey-button">My Projects →</button>
+          <Link to="/projects">
+            <button className="journey-button">My Projects →</button>
+          </Link>
         </div>
         <div className="journey-image">
           <img src={journeyImage} alt="Design Journey" />
@@ -96,43 +100,22 @@ export default function Home() {
 
       {/* Case Studies Section */}
       <section id="case-studies" className="case-studies-section">
-        <div className="case-studies-header">
-          <h2 className="case-studies-title">Case Studies and User Research 📚✍️</h2>
-          <p className="case-studies-description">
-            User-centered design is my compass. Uncovering insights to craft exceptional experiences.
-            From research to reality, shaping the future.
-          </p>
-        </div>
-        <div className="case-studies-container">
-          <div className="case-study-card">
-            <img src={comingUp} alt="Coming Up" className="case-image" />
-            <h3>Mental Wellness App User Research</h3>
-            <div className="case-metadata">
-              <span>📅 Nov 11, 2024</span>
-              <span>⏱ 5 min</span>
-            </div>
-          </div>
-          <div className="case-study-card">
-            <img src={lyftCaseStudy} alt="Lyft Case Study" className="case-image" />
-            <h3>Lyft App's Design Case Study</h3>
-            <div className="case-metadata">
-              <span>📅 Sep 16, 2023</span>
-              <span>⏱ 5 min</span>
-            </div>
-          </div>
-          <div className="case-study-card">
-            <img src={newProduct} alt="New Product" className="case-image" />
-            <h3>New feature research @founderway</h3>
-            <div className="case-metadata">
-              <span>📅 Jul 15, 2024</span>
-              <span>⏱ 5 min</span>
-            </div>
-          </div>
-        </div>
-        <div className="case-studies-footer">
-          <button className="case-button">View More →</button>
+      <div className="case-studies-header">
+        <h2 className="case-studies-title">Case Studies and User Research</h2>
+        <p className="case-studies-description">
+          User-centered design is my compass. Uncovering insights to craft exceptional experiences.
+          From research to reality, shaping the future.
+        </p>
+        <Link to="/research">
+            <button className="case-studies-button">My Research →</button>
+          </Link>
+      </div>
+      <div className="case-image">
+          <img src={caseImage} alt="case studies" />
         </div>
       </section>
+
     </div>
+    </PageTransition>
   );
 }

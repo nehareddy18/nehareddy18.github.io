@@ -1,9 +1,11 @@
 import React from "react";
 import "./Contact.css";
 import profileImage from "../assets/image.png"; // Replace with actual image path
+import PageTransition from "../components/PageTransition";
 
 export default function Contact() {
   return (
+    <PageTransition>
     <div className="contact-page">
       <div className="contact-container">
         {/* Top Message */}
@@ -26,5 +28,6 @@ export default function Contact() {
         </div>
       </div>
     </div>
+    </PageTransition>
   );
 }
